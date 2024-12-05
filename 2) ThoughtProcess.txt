@@ -1,0 +1,75 @@
+1) INITIAL PLANNING - REQUIREMENTS
+a) Track games played and their outcome (who won)
+b) Multiple competitors play in the tournament
+c) Create a tournament plan
+d) Schedules games
+e) Single less eliminates player
+f) The last player standing is the winner
+
+Questions to expand the initial requirements:
+Question 1
+How many players will the tournament handle? Is it variable?
+The application should be able to handle a variable number of players in a tournament.
+Question 2
+If a tournament has less than the full complement of players, how do we have handle it?
+A tournament with less than the perfect number( a multiple of 2, so 4, 8, 16, 32, etc.) should add in "byes"!.
+Basically certain people selected a random get to skip the first round and act as they won.
+Question 3 
+Should the ordering of who plays each other be random or order by input order?
+The ordering of the tournament should be random.
+Question 4
+Should we schedule the game or are they just played whenever?
+The games should be played in whatever order and whenever the players want to play them.
+Question 5
+If the games are scheduled, how does the system know when to scheduled games for?
+They are not scheduled so we don't care.
+Question 6
+If the games are played whenever, can a game from the second round be played before the first round is complete?
+No. Each round should be fully completed before the next round is displayed.
+Question 7
+Does the system need to store a score of some kind or just who won?
+Storing a simple score would be nice. Just a number for each player. That way, the tracker can be flexible enough to
+handle a checkers tournament or a basketball tournament.
+Question 8
+What type of front-end should this system have ( from, webpage, app, etc ) - Do not assume if you don't need to
+The system should be a desktop system for no, but down the road we might when turn it to app or website.
+Question 9
+Where will the data be stored?
+Ideally, the data should be stored in a Microsoft SQL database but please put in an option to store to a text file instead.
+Question 10
+Will this system handle entry fees, prizes, or other pay-outs?
+Yes. The tournament should have the option of charging an entry fee. Prizes should also be an option, where the tournament
+administrator chooses how much money to award a variable number of places. The total cash amount should not exceed the income
+from the tournament. A percentage-based system would also be nice to specify.
+Question 11
+What type of reporting is needed?
+A simple report specifying the outcome of the games per round as well as a report that specifies who won and how much they won.
+These can be just displayed on a from or they can be emailed to tournament competitors and the administrator.
+Question 12
+Who can fill in the results of a game?
+Anyone using the application should be able to fill in the game scores.
+Question 13
+Are there varying levels of access?
+No. The only method of varied access is if the competitors are not allowed in the application and instead, they do everything via email.
+Question 14
+Should this system contact users about upcoming games?
+Yes, the system should email users that they are due to play in a round as well as who they are scheduled to play.
+Question 15
+Is each player on there own or can teams use this team tracker?
+The tournament tracker should be able to handle the addition of other members.
+All members should be treated as equals in that they all get tournament emails.
+Teams should also be able to name their team.
+
+2)Big Picture Design
+Structure : Windows Forms application and Class Library
+Data: SQL and/or Text File
+Users: One at a time on one application
+
+Key Concepts
+-Email
+-SQL
+-Custom Events
+-Error Handling
+-Interfaces
+-Random ordering
+-Texting

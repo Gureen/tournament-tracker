@@ -1,0 +1,16 @@
+Idea 
+The idea of this application was to teach myself C# using practical work, before going to .NET framework.
+Everything that wasn't clear to me in C# regarding theory and syntax was additionally studied during this practice.
+The application is Tournament Tracker for tracking various sports events.
+
+Technology utilized: 
+Multi-form WinForms Application
+In-depth Class Library
+SQL Database
+Text File Storage
+Dapper
+LINQ
+Interfaces
+Emailing from C#
+Custom Events
+Advanced Debugging
