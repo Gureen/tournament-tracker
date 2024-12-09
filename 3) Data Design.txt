@@ -31,7 +31,7 @@ MatchupRound (int)
 MatchupEntry
 TeamCompeting(Team)
 Score(double)
-ParentMatchUp(atchUp)
+ParentMatchUp(MatchUp)
 
 
 
