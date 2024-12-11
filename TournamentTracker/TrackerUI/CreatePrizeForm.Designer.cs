@@ -32,8 +32,8 @@
             createPrize = new Label();
             placeNumberLabel = new Label();
             placeNumberValue = new TextBox();
-            prizeValueLabel = new Label();
-            prizeValueValue = new TextBox();
+            prizeAmountLabel = new Label();
+            prizeAmountValue = new TextBox();
             placeNameLabel = new Label();
             placeNameValue = new TextBox();
             prizePercentageLabel = new Label();
@@ -73,24 +73,29 @@
             placeNumberValue.TabIndex = 16;
             placeNumberValue.TextChanged += firstNameValue_TextChanged;
             // 
-            // prizeValueLabel
+            // prizeAmountLabel
             // 
-            prizeValueLabel.AutoSize = true;
-            prizeValueLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            prizeValueLabel.ForeColor = Color.DarkSlateBlue;
-            prizeValueLabel.Location = new Point(24, 170);
-            prizeValueLabel.Name = "prizeValueLabel";
-            prizeValueLabel.Size = new Size(106, 25);
-            prizeValueLabel.TabIndex = 19;
-            prizeValueLabel.Text = "Prize Value";
+            prizeAmountLabel.AutoSize = true;
+            prizeAmountLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            prizeAmountLabel.ForeColor = Color.DarkSlateBlue;
+            prizeAmountLabel.ImageAlign = ContentAlignment.BottomLeft;
+            prizeAmountLabel.Location = new Point(24, 170);
+            prizeAmountLabel.Name = "prizeAmountLabel";
+            prizeAmountLabel.Size = new Size(126, 25);
+            prizeAmountLabel.TabIndex = 19;
+            prizeAmountLabel.Text = "Prize Amount";
+            prizeAmountLabel.Click += prizeValueLabel_Click;
             // 
-            // prizeValueValue
+            // prizeAmountValue
             // 
-            prizeValueValue.BorderStyle = BorderStyle.FixedSingle;
-            prizeValueValue.Location = new Point(183, 170);
-            prizeValueValue.Name = "prizeValueValue";
-            prizeValueValue.Size = new Size(154, 23);
-            prizeValueValue.TabIndex = 18;
+            prizeAmountValue.BorderStyle = BorderStyle.FixedSingle;
+            prizeAmountValue.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            prizeAmountValue.Location = new Point(183, 170);
+            prizeAmountValue.Name = "prizeAmountValue";
+            prizeAmountValue.Size = new Size(154, 27);
+            prizeAmountValue.TabIndex = 18;
+            prizeAmountValue.Text = "0";
+            prizeAmountValue.TextChanged += prizeAmountValue_TextChanged;
             // 
             // placeNameLabel
             // 
@@ -102,6 +107,7 @@
             placeNameLabel.Size = new Size(112, 25);
             placeNameLabel.TabIndex = 21;
             placeNameLabel.Text = "Place Name";
+            placeNameLabel.Click += placeNameLabel_Click;
             // 
             // placeNameValue
             // 
@@ -125,10 +131,12 @@
             // prizePercentageValue
             // 
             prizePercentageValue.BorderStyle = BorderStyle.FixedSingle;
+            prizePercentageValue.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             prizePercentageValue.Location = new Point(183, 247);
             prizePercentageValue.Name = "prizePercentageValue";
-            prizePercentageValue.Size = new Size(154, 23);
+            prizePercentageValue.Size = new Size(154, 27);
             prizePercentageValue.TabIndex = 22;
+            prizePercentageValue.Text = "0";
             // 
             // orLabel
             // 
@@ -144,27 +152,28 @@
             // createPrizeButton
             // 
             createPrizeButton.ForeColor = Color.DarkSlateBlue;
-            createPrizeButton.Location = new Point(183, 315);
+            createPrizeButton.Location = new Point(101, 310);
             createPrizeButton.Name = "createPrizeButton";
             createPrizeButton.Size = new Size(154, 42);
             createPrizeButton.TabIndex = 27;
             createPrizeButton.Text = "Create Prize";
             createPrizeButton.UseVisualStyleBackColor = true;
+            createPrizeButton.Click += createPrizeButton_Click;
             // 
             // CreatePrizeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(356, 433);
+            ClientSize = new Size(356, 389);
             Controls.Add(createPrizeButton);
             Controls.Add(orLabel);
             Controls.Add(prizePercentageLabel);
             Controls.Add(prizePercentageValue);
             Controls.Add(placeNameLabel);
             Controls.Add(placeNameValue);
-            Controls.Add(prizeValueLabel);
-            Controls.Add(prizeValueValue);
+            Controls.Add(prizeAmountLabel);
+            Controls.Add(prizeAmountValue);
             Controls.Add(placeNumberLabel);
             Controls.Add(placeNumberValue);
             Controls.Add(createPrize);
@@ -180,8 +189,8 @@
         private Label createPrize;
         private Label placeNumberLabel;
         private TextBox placeNumberValue;
-        private Label prizeValueLabel;
-        private TextBox prizeValueValue;
+        private Label prizeAmountLabel;
+        private TextBox prizeAmountValue;
         private Label placeNameLabel;
         private TextBox placeNameValue;
         private Label prizePercentageLabel;
